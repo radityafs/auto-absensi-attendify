@@ -10,7 +10,10 @@ const sendAttendance = async (idUser) => {
     const clockInOut = hour < 12 ? "1" : "0";
 
     const response = await fetch(
-      `https://attendify.id/clockInOut/${idUser}/${clockInOut}`
+      `https://attendify.id/clockInOut/${idUser}/${clockInOut}`,
+      {
+        method: "POST",
+      }
     );
 
     const data = await response.json();
